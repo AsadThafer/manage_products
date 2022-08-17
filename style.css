@@ -1,0 +1,16 @@
+.form-validation {
+    display: none;
+}
+
+.form-validation.show {
+    display: block;
+}
+
+.form-group{
+    margin:10px;
+}
+
+.form-group label.error{
+    display: block;
+    color: red;
+}
