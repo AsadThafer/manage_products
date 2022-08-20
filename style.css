@@ -1,4 +1,6 @@
-.form-validation {
+
+
+body.form-validation {
     display: none;
 }
 
@@ -8,9 +10,48 @@
 
 .form-group{
     margin:10px;
+
 }
 
 .form-group label.error{
     display: block;
     color: red;
+}
+
+.form-control {   
+    color:black;
+    border: 2px solid #CC6666;
+    border-radius: 2px;
+    margin-left:20%;
+    
+  }
+
+  .form-label{
+    color: white;
+  }
+
+  #productform{
+    margin-top: 10px;
+    font-size: 1rem;
+    Border:5px dotted #CC6666;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 30%;
+    width: 30%;
+    height: 50%;
+    background-color:rgb(30,30,40);;
+}
+
+.col-4{
+  border-radius: 25px;
+  border: 2px dotted #CC6666;
+  padding: 25px;
+
+}
+
+img{
+    border-radius: 25px;   
+}
+.container{
+    padding: 20px;
 }

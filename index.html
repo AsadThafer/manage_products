@@ -11,175 +11,58 @@
     <title>Product Store</title>
   </head>
   <body>
-    <form id ="productform" name="product">
-        <div class="form-group">
-        <label for="imgurl">Image URL : </label>
-        <input name="imgurl" type="url" id="imgurl" />
-        <div class="form-validation text-danger">Required</div>
+    <form id ="productform" name="product" >
+      
+        <div class="form-group col-8">
+        <label  class="form-label" for="imgurl">Image URL : </label>
+        <input class="form-control" name="imgurl" type="url" id="imgurl"  />
+       
         </div>
-      <div class="form-group">
-        <label for="productname">Product Name : </label>
-        <input name="productname" id="productname" type="text" /> 
-        <div class="form-validation text-danger">Required</div>
+      <div class="form-group col-8">
+        <label  class="form-label" for="productname">Product Name : </label>
+        <input class="form-control" name="productname" id="productname" type="text" class="form-control" /> 
+       
       </div>
       
-      <div class="form-group">
-        <label for="Price">Price : </label>
-        <input name="Price" id="Price" type="number" />
-        <div class="form-validation text-danger">Required</div> 
+      <div class="form-group col-8">
+        <label  class="form-label" for="Price">Price : </label>
+        <input class="form-control" name="Price" id="Price" type="number" />
+        
       </div>
 
-      <div class="form-group">
-        <label for="Description">Description : </label>
-        <input name="Description" id="Description" type="textfield" />
-        <div class="form-validation text-danger">Required</div> 
+      <div class="form-group col-8 ">
+        <label class="form-label"  for="Description">Description : </label>
+        <input class="form-control" name="Description" id="Description" type="textfield" />
+        
       </div>
-      <div class="form-group">
-        <label for="badgetext">Badge Text : </label>
-        <input name="badgetext" id="badgetext" type="text" />
-        <div class="form-validation text-danger">Required</div> 
+      <div class="form-group col-8">
+        <label class="form-label"  for="badgetext">Badge Text : </label>
+        <input class="form-control" name="badgetext" id="badgetext" type="text" />
+        
       </div>
-      <div class="form-group">
-        <label for="colorr">Color : </label>
-        <input name="colorr" id="colorr" type="color" />
-        <div class="form-validation text-danger">Required</div> 
+      <div class="form-group col-8">
+        <label class="form-label"  for="colorr">Color : </label>
+        <input class="form-control form-control-color"  name="colorr" id="colorr" type="color" />
+        
       </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary" name="AddP" id="AddP" value="Add Product" />
+      <div class="form-group col-8">
+        <input class="form-control" type="submit" class="btn btn-primary" name="AddP" id="AddP" value="Add Product" style="display:block" />
       </div>
-
+      <div class="form-group col-8">
+        <input class="form-control" type="submit" class="btn btn-primary" name="SaveP" id="SaveP" value="Save" style="display:none"/>
+              </div>
 
     </form>
 
-    <script>
-        $(document).ready(function () {
-            
-        $('#productform').validate({ // initialize the plugin
-            rules: {
-                imgurl: {
-                    required: true,
-                    url: true
-                },
-                productname: {
-                    required: true,
-                    minlength: 0
-                },
-                Price: {
-                    required: true,
-                    number: true
-                },
-                Description: {
-                    required: true,
-                    minlength: 5
-                },
-                badgetext: {
-                    required: true,
-                    
-                },
-            },
-            messages: {
-                imgurl: "Please enter a valid URL",
-                productname: "Please specify the product's name",
-                Price: "Please specify a Price",
-                Description: "Please enter a Description",
-                badgetext: "Please enter a badgeText",
-            },
-            submitHandler: function (form, e) {
-                e.preventDefault();
-                let data = {};
-                let imgurlval = $("#imgurl").val();
-                let productnameval = $("#productname").val();
-                let Priceval = $("#Price").val();
-                let Descriptionval = $("#Description").val();
-                let badgetextval = $("#badgetext").val();
-                let colorrval = $("#colorr").val();
-                data.imageURL = imgurlval;
-                data.ProductName = productnameval;
-                data.Price = Priceval;
-                data.Description = Descriptionval;
-                data.BadgeText = badgetextval;
-                data.Color = colorrval;
+    <script src="asadscript.js"></script>
 
-                $("#output").append(JSON.stringify(data));
-            },
-            invalidHandler: function(){
-            }
+    
+    <div class="container">
+      <div id="outputready" class="row align-items-start">
+      
 
-        });
+      </div>
+    </div>
 
-        });
-
-
-        // $("#AddP").on("click",function(e){
-        //     e.preventDefault();
-        //     ValidateForm();
-        // })
-        
-        //   function ValidateForm() {
-        //     // debugger;
-        //   let imgurlval = $("#imgurl").val();
-        //   let productnameval = $("#productname").val();
-        //   let Priceval = $("#Price").val();
-        //   let Descriptionval = $("#Description").val();
-        //   let badgetextval = $("#badgetext").val();
-        //   let colorrval = $("#colorr").val();
-        //   let data = {};
-        
-        //   if ($('#imgurl').val()===""){
-        //     $("#imgurl + .form-validation" ).addClass("show");
-        //   }
-        //   else{
-        //     $("#imgurl + .form-validation" ).removeClass("show");   
-        //   }
-        //   if ($('#productname').val()===""){
-        //     $("#productname + .form-validation" ).addClass("show");
-        //   }
-        //   else{
-        //     $("#productname + .form-validation" ).removeClass("show");   
-        //   }
-        //   if ($('#Price').val()===""){
-        //     $("#Price + .form-validation" ).addClass("show");
-        //   }
-        //   else{
-        //     $("#Price + .form-validation" ).removeClass("show");   
-        //   }
-        //   if ($('#Description').val()===""){
-        //     $("#Description + .form-validation" ).addClass("show");
-        //   }
-        //   else{
-        //     $("#Description + .form-validation" ).removeClass("show");   
-        //   }
-        //   if ($('#badgetext').val()===""){
-        //     $("#badgetext + .form-validation" ).addClass("show");
-        //   }
-        //   else{
-        //     $("#badgetext + .form-validation" ).removeClass("show");   
-        //   }
-
-
-
-
-        //   if ($('.form-group + label ').hasClass("error")){
-        //     return;
-
-        //   }
-        //   else{
-        //   data.imageURL = imgurlval;
-        //   data.ProductName = productnameval;
-        //   data.Price = Priceval;
-        //   data.Description = Descriptionval;
-        //   data.BadgeText = badgetextval;
-        //   data.Color = colorrval;
-
-        //   $("#output").append(JSON.stringify(data));
-        // }
-           
-            
-        ;
-
-          
-    </script>
-
-    <div id="output"></div>
   </body>
 </html>
