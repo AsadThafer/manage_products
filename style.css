@@ -42,16 +42,38 @@ body.form-validation {
     background-color:rgb(30,30,40);;
 }
 
-.col-4{
-  border-radius: 25px;
-  border: 2px dotted #CC6666;
+.col-3{
+
+  border: 2px solid #6b82a8;
   padding: 25px;
 
 }
 
-img{
-    border-radius: 25px;   
-}
+
 .container{
-    padding: 20px;
+    padding: 10px;
 }
+
+
+.productcard{
+    padding: 10px;
+
+}
+.badgeproduct{
+    position: absolute ;
+    left: 0px;
+    padding: 5px;
+    top: 0px;
+    background-color:#6b82a8;
+    color: white;
+}
+
+.imgdiv{
+    position: relative;
+}
+
+@media (min-width: 575.98px) and (max-width: 1199.98px) { 
+    .productinformation{
+        
+    }
+ }
