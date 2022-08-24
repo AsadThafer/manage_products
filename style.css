@@ -54,7 +54,7 @@ body.form-validation {
 
 
 .productcard{
-    padding: 10px;
+    padding: 0px;
 
 }
 .badgeproduct{
@@ -73,14 +73,35 @@ body.form-validation {
 @media(max-width: 1280px) {
     .col-6{
         max-width: 80%;
+        padding: 0;
     } 
+    .btn-block{
+        padding: 0px;
+        
+        margin-bottom:5px;
+        font-size: 0.7rem;
+
+        
+    }
+    .productcard{
+        padding: 3px;
+    
+    }
+    .form-control{
+        width: 80%;
+    }
  }
 
  @media (min-width: 1200px) { 
-    .col-6{
+
+    .col-8 .col-6{
         max-width: 75%;
     }  
     #productform{
         width: 750px;
+    }
+    .productcard{
+        padding: 10px;
+    
     }
   }

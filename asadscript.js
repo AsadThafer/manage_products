@@ -69,8 +69,8 @@ $('#productform').validate({ // initialize the plugin
              <div class="text-center text-secondary">${data.Description}</div> 
              color:<div class="row-1 mb-4" style="background-color:${data.Color}; border: 1px;width: 20px;height: 20px;"></div> 
              <div class="row flex-nowrap">
-             <div class="col"><button type="button" class="btn btn-primary btn-block" onclick="edit(event)">Update</button></div>
-             <div class="col"><button type="button" name="deletebutton" class="btn btn-danger btn-block" onclick="checkbeforedelete()">Delete</button></div>
+             <div class="col-6"><button type="button" class="btn btn-primary btn-block" onclick="edit(event)">Update</button></div>
+             <div class="col-6"><button type="button" name="deletebutton" class="btn btn-danger btn-block" onclick="checkbeforedelete()">Delete</button></div>
  
              </div>
          
@@ -173,7 +173,7 @@ form.querySelector('input[name="Description"]').value =obj.Description;
 
 
 function checkbeforedelete(e){
-    let isExecuted = confirm("Are you sure to execute this action?");
+    let isExecuted = confirm("Are you sure you want to delete this "+ obj.ProductName+" ?");
     
     if (isExecuted) {
         e = e || window.event;
@@ -182,6 +182,7 @@ function checkbeforedelete(e){
         obj = JSON.parse(json);                
         foundit = document.getElementById(obj.id);
         $(foundit).remove();
+        alert('Product '+ obj.ProductName +' has been deleted');
         } else {
             alert("Action canceled");
         }
