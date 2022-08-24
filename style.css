@@ -37,7 +37,6 @@ body.form-validation {
     padding: 5px;
     margin-bottom: 10px;
 
-    background-color:rgb(30,30,40);
 }
 
 .col-3{
@@ -90,7 +89,9 @@ body.form-validation {
     .form-control{
         width: 80%;
     }
+
  }
+
 
  @media (min-width: 1200px) { 
 
@@ -104,4 +105,8 @@ body.form-validation {
         padding: 10px;
     
     }
+    .titleproject{
+        font-size: 1.2rem;
+    }
+
   }

@@ -1,4 +1,4 @@
-var order=12;
+
 $(document).ready(function () {
     
 $('#productform').validate({ // initialize the plugin
@@ -123,6 +123,7 @@ form.querySelector('input[name="Description"]').value =obj.Description;
             newdata.BadgeText = form.querySelector('input[name="badgetext"]').value ;
             newdata.Color = form.querySelector('input[name="colorr"]').value ;        
             console.log(newdata);
+
             console.log(JSON.stringify(newdata));
             $("#outputready").append(`
            <div id="${newdata.id}" class="col-3 col-xs-5 offset-1 order-12 productcard"><input type="hidden" value='${JSON.stringify(newdata)}'> 
@@ -144,8 +145,8 @@ form.querySelector('input[name="Description"]').value =obj.Description;
              <div class="text-center text-secondary">${newdata.Description}</div> 
              color:<div class="row-1 mb-4" style="background-color:${newdata.Color}; border: 1px;width: 20px;height: 20px;"></div> 
              <div class="row   flex-nowrap">
-             <div class="col"><button type="button" class="btn btn-primary btn-block" onclick="edit(event)">Update</button></div>
-             <div class="col"><button type="button" name="deletebutton" class="btn btn-danger btn-block" onclick="checkbeforedelete(event)">Delete</button></div>
+             <div class="col-6"><button type="button" class="btn btn-primary btn-block" onclick="edit(event)">Update</button></div>
+             <div class="col-6"><button type="button" name="deletebutton" class="btn btn-danger btn-block" onclick="checkbeforedelete(event)">Delete</button></div>
  
              </div>
          
@@ -187,3 +188,6 @@ function checkbeforedelete(e){
             alert("Action canceled");
         }
         }
+
+        var htmlContents = document.documentElement.innerHTML;
+        localStorage.setItem('myBook', JSON.stringify(htmlContents ));
