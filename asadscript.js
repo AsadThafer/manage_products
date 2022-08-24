@@ -173,7 +173,7 @@ form.querySelector('input[name="Description"]').value =obj.Description;
 
 
 function checkbeforedelete(e){
-    let isExecuted = confirm("Are you sure you want to delete this "+ obj.ProductName+" ?");
+    let isExecuted = confirm("You are about to delete "+ obj.ProductName+" are you sure?");
     
     if (isExecuted) {
         e = e || window.event;
