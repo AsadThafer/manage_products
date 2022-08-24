@@ -16,44 +16,44 @@
 
   </head>
   <body>
-    <form id ="productform"  name="product" >
+    <form id ="productform" class="container col-8" name="product" >
       
-        <div class="form-group col-8">
+        <div class="form-group col-6">
         <label  class="form-label" for="imgurl">Image URL : </label>
         <input class="form-control" name="imgurl" type="url" id="imgurl"  />
        
         </div>
-      <div class="form-group col-8">
+      <div class="form-group col-6">
         <label  class="form-label" for="productname">Product Name : </label>
         <input class="form-control" name="productname" id="productname" type="text" class="form-control" /> 
        
       </div>
       
-      <div class="form-group col-8">
+      <div class="form-group col-6">
         <label  class="form-label" for="Price">Price : </label>
         <input class="form-control" name="Price" id="Price" type="number" />
         
       </div>
 
-      <div class="form-group col-8  ">
+      <div class="form-group col-6  ">
         <label class="form-label"  for="Description">Description : </label>
         <input class="form-control" name="Description" id="Description" type="textfield" />
         
       </div>
-      <div class="form-group col-8">
+      <div class="form-group col-6">
         <label class="form-label"  for="badgetext">Badge Text : </label>
         <input class="form-control" name="badgetext" id="badgetext" type="text" />
         
       </div>
-      <div class="form-group col-8">
+      <div class="form-group col-6">
         <label class="form-label"  for="colorr">Color : </label>
-        <input class="form-control form-control-color"  name="colorr" id="colorr" type="color" />
+        <input class="form-control form-control-color"  name="colorr" id="colorr" value="#000000" type="color" />
         
       </div>
-      <div class="form-group col-8">
+      <div class="form-group col-6 text-center ">
         <input class="form-control" type="submit" class="btn btn-primary" name="AddP" id="AddP" value="Add Product" style="display:block" />
       </div>
-      <div class="form-group col-8">
+      <div class="form-group col-6">
         <button class="form-control" class="btn btn-primary" name="SaveP" id="SaveP" value="Save" style="display:none"> Save </button>
               </div>
 
@@ -63,30 +63,7 @@
     
     <div class="container">
       <div id="outputready" class="row align-items-start">
-        <div class="col-3 offset-1 order-12 productcard"><input type="hidden" value="{&quot;imageURL&quot;:&quot;https://assets.reebok.com/images/w_600,f_auto,q_auto/5cc6c23452d0440ba69fac5a00d7a5b6_9366/Reebok_Identity_Logo_T-Shirt_Black_GU2573_13_standard.jpg&quot;,&quot;ProductName&quot;:&quot;rebook tshirt&quot;,&quot;Price&quot;:&quot;100&quot;,&quot;Description&quot;:&quot;rebook&quot;,&quot;BadgeText&quot;:&quot;REBOOK&quot;,&quot;Color&quot;:&quot;#000000&quot;}"> 
-          <div class="row">
-            
-          </div>
-          <div class="imgdiv">
-            <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto/5cc6c23452d0440ba69fac5a00d7a5b6_9366/Reebok_Identity_Logo_T-Shirt_Black_GU2573_13_standard.jpg" width="100%" height="60%">
-            <div class="badgeproduct">REBOOK</div>  
-          </div>
 
-          <div class="container-fluid productinformation float-sm-right">
-            <div class="row">
-              <div class="col text-left font-weight-bold text-uppercase">
-                rebook tshirt
-              </div>
-              <div class="col text-right">$100.00</div>  
-            </div>
-            <div class="text-center text-secondary">rebook</div> 
-            color:<div class="row-1 mb-4" style="background-color:#000000; border: 1px;width: 20px;height: 20px;"></div> 
-            <div class="row   flex-nowrap">
-            <div class="col"><button type="button" class="btn btn-primary btn-block" name="updatebuttt" onclick="edit(event)">Update</button></div>
-            <div class="col"><button type="button" name="deletebutton" class="btn btn-danger btn-block" onclick="checkbeforedelete()">Delete</button></div>
-
-            </div>
-        
 
           </div>
           </div>

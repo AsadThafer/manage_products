@@ -46,10 +46,11 @@ $('#productform').validate({ // initialize the plugin
         data.Description = Descriptionval;
         data.BadgeText = badgetextval;
         data.Color = colorrval;
-        data.id = Math.random() + productnameval;
+        data.id = (Math.floor(Math.random() * 100) + 1) + Priceval;
         document.getElementById('productform').reset();
+
         $("#outputready").append(`
-           <div id="${data.id}" class="col-3 offset-1 order-12 productcard"><input type="hidden" value='${JSON.stringify(data)}'> 
+           <div id="${data.id}" class="col-3 col-xs-5 offset-1 order-12 productcard"><input type="hidden" value='${JSON.stringify(data)}'> 
            <div class="row">
              
            </div>
@@ -67,7 +68,7 @@ $('#productform').validate({ // initialize the plugin
              </div>
              <div class="text-center text-secondary">${data.Description}</div> 
              color:<div class="row-1 mb-4" style="background-color:${data.Color}; border: 1px;width: 20px;height: 20px;"></div> 
-             <div class="row   flex-nowrap">
+             <div class="row flex-nowrap">
              <div class="col"><button type="button" class="btn btn-primary btn-block" onclick="edit(event)">Update</button></div>
              <div class="col"><button type="button" name="deletebutton" class="btn btn-danger btn-block" onclick="checkbeforedelete()">Delete</button></div>
  
@@ -97,26 +98,69 @@ function edit(e){
     Savep = document.getElementById('SaveP');  
     Savep.style.display = 'block';
     var form = document.forms[0];
-    iu = form.querySelector('input[name="imgurl"]').value =obj.imageURL;
-    pn = form.querySelector('input[name="productname"]').value =obj.ProductName;
-    form.querySelector('input[name="Price"]').value =obj.Price;
-    form.querySelector('input[name="Description"]').value =obj.Description;
-    form.querySelector('input[name="badgetext"]').value =obj.BadgeText;
-    form.querySelector('input[name="colorr"]').value =obj.Color;
+    let newdata = {};
+form.querySelector('input[name="imgurl"]').value =obj.imageURL;
+form.querySelector('input[name="productname"]').value =obj.ProductName;
+form.querySelector('input[name="Price"]').value =obj.Price;
+form.querySelector('input[name="Description"]').value =obj.Description;
+ form.querySelector('input[name="badgetext"]').value =obj.BadgeText;
+ form.querySelector('input[name="colorr"]').value =obj.Color;
 
+    newdata.id = obj.id;
+    console.log(newdata);
     Savep.onclick = (e) => {
         e.preventDefault();
-        if ($("#productform").valid()) {
-            
+        if ($("#productform").valid()) {           
             addp.style.display = 'block';
             Savep.style.display = 'none';
+            oldproduct = document.getElementById(obj.id);
+            $(oldproduct).remove();
+            console.log(oldproduct);
+            newdata.imageURL = form.querySelector('input[name="imgurl"]').value ;
+            newdata.ProductName = form.querySelector('input[name="productname"]').value ;
+            newdata.Price = form.querySelector('input[name="Price"]').value ;
+            newdata.Description = form.querySelector('input[name="Description"]').value ;
+            newdata.BadgeText = form.querySelector('input[name="badgetext"]').value ;
+            newdata.Color = form.querySelector('input[name="colorr"]').value ;        
+            console.log(newdata);
+            console.log(JSON.stringify(newdata));
+            $("#outputready").append(`
+           <div id="${newdata.id}" class="col-3 col-xs-5 offset-1 order-12 productcard"><input type="hidden" value='${JSON.stringify(newdata)}'> 
+           <div class="row">
+             
+           </div>
+           <div class="imgdiv">
+             <img src="${newdata.imageURL}" width="100%" height="60%">
+             <div class="badgeproduct">${newdata.BadgeText}</div>  
+           </div>
+ 
+           <div class="container-fluid productinformation float-sm-right">
+             <div class="row">
+               <div class="col text-left font-weight-bold text-uppercase">
+               ${newdata.ProductName}
+               </div>
+               <div class="col text-right">$${newdata.Price}</div>  
+             </div>
+             <div class="text-center text-secondary">${newdata.Description}</div> 
+             color:<div class="row-1 mb-4" style="background-color:${newdata.Color}; border: 1px;width: 20px;height: 20px;"></div> 
+             <div class="row   flex-nowrap">
+             <div class="col"><button type="button" class="btn btn-primary btn-block" onclick="edit(event)">Update</button></div>
+             <div class="col"><button type="button" name="deletebutton" class="btn btn-danger btn-block" onclick="checkbeforedelete(event)">Delete</button></div>
+ 
+             </div>
+         
+ 
+           </div>
+       `)
+        document.getElementById('productform').reset();
+
 
             // updatebuttll=document.getElementById('Updatebutton');
             // founditt= $(updatebuttll).closest('.productcard')[0];
             // $(founditt).remove();
         }
         else{
-            alert('check product info');
+            alert('check product info before updating');
         }
     
         
@@ -128,14 +172,17 @@ function edit(e){
 
 
 
-function checkbeforedelete(){
+function checkbeforedelete(e){
     let isExecuted = confirm("Are you sure to execute this action?");
     
     if (isExecuted) {
-        deletebuttonll=document.getElementsByName('deletebutton');                     
-           foundit= $(deletebuttonll).closest('.productcard')[0];
-           $(foundit).remove();
-          } else {
+        e = e || window.event;
+        var targetd = e.target || e.srcElement;
+        json = targetd.parentNode.parentNode.parentNode.parentNode.firstChild.value;
+        obj = JSON.parse(json);                
+        foundit = document.getElementById(obj.id);
+        $(foundit).remove();
+        } else {
             alert("Action canceled");
-          }
+        }
         }

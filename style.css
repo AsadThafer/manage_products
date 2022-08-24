@@ -36,10 +36,8 @@ body.form-validation {
     Border:5px dotted #CC6666;
     padding: 5px;
     margin-bottom: 10px;
-    margin-left: 30%;
-    width: 30%;
-    height: 50%;
-    background-color:rgb(30,30,40);;
+
+    background-color:rgb(30,30,40);
 }
 
 .col-3{
@@ -72,8 +70,17 @@ body.form-validation {
     position: relative;
 }
 
-@media (min-width: 575.98px) and (max-width: 1199.98px) { 
-    .productinformation{
-        
-    }
+@media(max-width: 1280px) {
+    .col-6{
+        max-width: 80%;
+    } 
  }
+
+ @media (min-width: 1200px) { 
+    .col-6{
+        max-width: 75%;
+    }  
+    #productform{
+        width: 750px;
+    }
+  }
