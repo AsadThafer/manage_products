@@ -11,14 +11,6 @@ this Task is a part of my short-term internship at <a href="https://www.itgsoftw
 - edit Products .
 - validation for the inputs form and the error message should be below each input(using jQuery validation) .
 - delete Product confirmation .
--each product has those Properties :
-Product Image URL. 
-Product name (ex: WOMEN'S BASE CAMP SWEATER) 
-Price (ex: 97$) 
-Description 
-Badge text( ex: New colors) 
-Badge color (ex: #000000, in screenshot it shows as light blue color) 
-Add product button 
 
 
 ## Installation
