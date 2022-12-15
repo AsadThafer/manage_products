@@ -1,10 +1,19 @@
-# This is jQuery task: 
+# Manage Products jQuery & Javascript Project
 
-Please Solve the following task (manage products) :
+This project is a simple page for managing products written in JavaScript. It allows users to create, update status,search and delete todo list items.
 
-1- This task will be a page for managing products.
-2- At the top of the page,  there should be a form contain the following fields:
+this Task is a part of my short-term internship at <a href="https://www.itgsoftware.com">ITG - Software Engineering</a>
 
+## Features
+
+- Add new Products .
+- delete Products .
+- edit Products .
+- validation for the inputs form and the error message should be below each input(using jQuery validation) .
+- delete Product confirmation .
+- search for to do .
+- Data should be stored in the browser so when we refresh we don't lose the data done using local Storage .
+-each product has those Properties :
 Product Image URL.
 Product name (ex: WOMEN'S BASE CAMP SWEATER)
 Price (ex: 97$)
@@ -13,17 +22,21 @@ Badge text( ex: New colors)
 Badge color (ex: #000000, in screenshot it shows as light blue color)
 Add product button
 
+## Installation
 
-3- When fill the fields, then click add, the item should be added to the list, the user can fill a new item
+Clone the repository:
 
-4- The items should be shown 3 items per row.
+<a href="https://github.com/AsadThafer/manage_products">Source Code</a>
 
-5- Add validation for the inputs form, for each one, and the error message should be below each input(use jQuery validation)
+Run index.html using Live Server .
 
-6- For each product, add delete and edit buttons.
+## Netlify Deployment: 
 
-7- When click delete, a pop up should be shown saying: "You are about to delete {product name here}, are you sure?", this pop up
-should has yes and no buttons, clicking yes should delete the item, no will do nothing.
+<a href="https://manageproducts.netlify.app">Manage Products </a>
 
-8- when click edit, the product info should be filled in the top form, "add product" button should be replaced with "save"
-button, the user can edit any filed then click save, after clicking save the button should be replaced as before "add product".
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
